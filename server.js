@@ -25,7 +25,7 @@ http.listen(port, function(){
 
 // import Modules/Controllers
 var signup = require('./signup');
-
+var updateuser = require('./userupdate');
 
 //connecting to DataBase
 var con = mysql.createConnection({
@@ -44,4 +44,8 @@ var con = mysql.createConnection({
   
 app.post('/signup', function(req, res) {
 	signup.signup(req, res, con)
+});
+
+app.post('/updateuser', function(req, res) {
+	updateuser.user_update(req, res, con)
 });
